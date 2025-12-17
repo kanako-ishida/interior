@@ -1,0 +1,133 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#products {
+    .main {
+        padding-top: 80px;
+
+        @media screen and (max-width: 1024px) {
+            padding-top: 60px;
+        }
+    }
+
+    // pageHeader
+
+    .pageHeader {
+        @include pageHeader;
+
+        &__pic {
+            background: url(../images/products/mainvisual.jpg)center center / cover;
+            @include pageHeaderPic;
+        }
+
+        &__ttl {
+            @include pageHeaderTtl;
+        }
+
+        &__en {
+            @include pageHeaderEn;
+        }
+
+        &__ja {
+            @include pageHeaderJa;
+        }
+    }
+
+    // tab
+
+    .tab {
+        &__item {
+            margin-bottom: 40px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            @media screen and (max-width: 767px) {
+              gap: 5px;
+            }
+        }
+       
+
+        &__list {
+            max-width: 150px;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid $fontcolor;
+            border-left: 1px solid $fontcolor;
+            border-right: 1px solid $fontcolor;
+            cursor: pointer;
+            transition: all .3s ease;
+            @media screen and (max-width: 767px) {
+              font-size: 10px;
+            }
+
+            &:hover {
+                background: $fontcolor;
+                color: $white;
+            }
+
+            &.active {
+                background: $fontcolor;
+                color: $white;
+            }
+        }
+    }
+
+    // item
+
+    .products {
+        &__item {
+            // display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 120px;
+
+            display: none;
+            @media screen and (max-width: 1024px) {
+              grid-template-columns: repeat(3, 1fr);
+            }
+            @media screen and (max-width: 767px) {
+              margin-bottom: 60px;
+              grid-template-columns: repeat(2, 1fr);
+            }
+            &.active {
+                display: grid;
+            }
+        }
+
+        &__list {
+            position: relative;
+        }
+
+        &__info {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.6);
+            color: $white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .6s ease;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &__name {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        &__price {
+            font-size: 14px;
+        }
+
+    }
+}

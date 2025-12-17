@@ -1,0 +1,227 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.gnav {
+    @media screen and (max-width: 1024px) {
+      width: 80%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      // left: 0;
+      left: 120%;
+      z-index: 20;
+      transition: all .6s;
+      // transform: translateX(-100%);
+      background: $white;
+    }
+    &.active {
+      @media screen and (max-width: 1024px) {
+        // transform: translateX(0);
+        left: 0;
+    }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+          height: 100vh;
+          flex-direction: column;
+          padding: 60px 0;
+          overflow: auto;
+        }
+    }
+
+    &__list {
+        margin-left: 40px;
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+          border-top: 1px solid $fontcolor;
+          margin-left: 0;
+        }
+
+        &:first-child {
+            position: relative;
+
+            & span {
+                cursor: pointer;
+                @media screen and (max-width: 1024px) {
+                  padding: 20px;
+                  display: block;
+                }
+
+                &.active::after {
+                  content: none;
+                }
+
+                &::before {
+                    @media screen and (max-width: 1024px) {
+                      position: absolute;
+                      content: "";
+                      width: 15px;
+                      height: 1px;
+                      top: 30px;
+                      right: 20px;
+                      background: $fontcolor;
+                    }
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-top: 1px solid $fontcolor;
+                    border-right: 1px solid $fontcolor;
+                    transform: rotate(135deg);
+                    top: 20px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    @media screen and (max-width: 1024px) {
+                      width: 1px;
+                      height: 15px;
+                      background-color: $fontcolor;
+                      border: none;
+                      transform: none;
+                      top: 23px;
+                      right: 26px;
+                      left: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    &__link {
+      @media screen and (max-width: 1024px) {
+        padding: 20px;
+        width: 100%;
+      }
+    }
+
+    &__inner {
+        width: 140px;
+        padding: 10px 20px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: $white;
+        display: none;
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+          padding: 0 0 0 40px;
+          position: static;
+        }
+        &List {
+            margin-bottom: 10px;
+            @media screen and (max-width: 1024px) {
+              border-top: 1px solid $line;
+              margin-bottom: 0;
+            }
+        }
+        &Link {
+          @media screen and (max-width: 1024px) {
+            padding: 20px;
+            width: 100%;
+          }
+        }
+    }
+
+    &__contact {
+        @media screen and (max-width: 1024px) {
+          padding: 30px 0;
+        }
+    }
+
+    &__contactLink {
+        padding: 8px 30px;
+        border-radius: 30px;
+        background: $fontcolor;
+        color: $white;
+        text-align: center;
+        font-weight: bold;
+        @media screen and (max-width: 1024px) {
+          max-width: 160px;
+          margin: 0 auto;
+        }
+
+    }
+
+    &__mask {
+        display: none;
+        &.active {
+          @media screen and (max-width: 1024px) {
+            width: 100%;
+            height: 100%;
+            background: $black;
+            display: block;
+            opacity: 0.8;
+            position: fixed;
+            top: 0;
+            left: 0;  
+        }
+        }
+    }
+}
+
+.btn {
+    @media screen and (max-width: 1024px) {
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      top: 5px;
+      right: 10px;
+      z-index: 30;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &__top,
+    &__middle,
+    &__bottom {
+        @media screen and (max-width: 1024px) {
+          width: 60%;
+          height: 1px;
+          background: $fontcolor;
+          display: block;
+          position: absolute;
+        }
+    }
+
+    &__top {
+      @media screen and (max-width: 1024px) {
+        transform: translateY(-8px);
+      }
+      &.active {
+        @media screen and (max-width: 1024px) {
+          transform: rotate(45deg);
+        background: $white;
+        }
+      }
+    }
+
+    &__middle.active {
+      @media screen {
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+    }
+
+    &__bottom {
+      @media screen and (max-width: 1024px) {
+        transform: translateY(8px);
+      }
+      &.active {
+        @media screen and (max-width: 1024px) {
+          transform: rotate(-45deg);
+          background: $white;
+      }
+      }
+    }
+}

@@ -1,0 +1,14 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.fadein {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1s;
+
+    &.inview {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}

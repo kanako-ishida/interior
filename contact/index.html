@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Contact| Interior Design</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Interior Designのお問い合わせページです。ご不明点やご質問などございましたらお気軽にお問い合わせください。">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <link rel="apple-touch-icon" href="../images/common/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&family=Zen+Old+Mincho&display=swap"
+    rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet" media="all">
+</head>
+
+<body id="contact">
+
+  <header id="header" class="header">
+    <div class="header__logo"><a href="#" class="header__link"><img src="../images/common/logo.svg"
+          alt="Interior Design" class="header__img"></a></div>
+    <div id="btn" class="btn">
+      <span id="btn__top" class="btn__top"></span>
+      <span id="btn__middle" class="btn__middle"></span>
+      <span id="btn__bottom" class="btn__bottom"></span>
+    </div>
+    <nav id="gnav" class="gnav">
+      <ul class="gnav__nav">
+        <li class="gnav__list">
+          <span>会社情報</span>
+          <ul class="gnav__inner">
+            <li class="gnav__innerList"><a href="../company/index.html#philosophy" class="gnav__innerLink">企業理念</a></li>
+            <li class="gnav__innerList"><a href="../company/index.html#service" class="gnav__innerLink">事業紹介</a></li>
+            <li class="gnav__innerList"><a href="../company/index.html#overview" class="gnav__innerLink">会社概要</a></li>
+            <li class="gnav__innerList"><a href="../company/index.html#access" class="gnav__innerLink">アクセス</a></li>
+          </ul>
+        </li>
+        <li class="gnav__list"><a href="../products/index.html" class="gnav__link">商品一覧</a></li>
+        <li class="gnav__list"><a href="../works/index.html" class="gnav__link">実績紹介</a></li>
+        <li class="gnav__list"><a href="../faq/index.html" class="gnav__link">よくある質問</a></li>
+        <li class="gnav__list gnav__contact"><a href="index.html" class="gnav__contactLink">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div id="gnav__mask" class="gnav__mask"></div>
+  </header>
+
+  <!-- main -->
+  <main class="main">
+    <!-- pageHeader -->
+    <div class="pageHeader">
+      <div class="pageHeader__pic"></div>
+      <div class="pageHeader__ttl">
+        <h1 class="pageHeader__head">
+          <span class="pageHeader__en">contact</span>
+          <span class="pageHeader__ja">お問い合わせ</span>
+        </h1>
+      </div>
+    </div>
+
+    <!-- intro -->
+    <p class="contact__intro">ご質問やご不明点がございましたら、<br>お気軽にお問い合わせください。</p>
+    <!-- form -->
+     <div class="form__area">
+     <p class="form__ttl">お問い合わせフォーム</p>
+     <form action="" method="post">
+      <dl>
+        <div class="form__item">
+          <dt><label for="kind">お問い合わせ種別</label><span class="require">必須</span></dt>
+            <dd>
+              <select name="kind" id="kind">
+                <option value="">選択してください</option>
+                <option value="インテリアについて">インテリアについて</option>
+                <option value="店舗デザインについて">店舗デザインについて</option>
+                <option value="採用について">採用について</option>
+                <option value="取材依頼について">取材依頼について</option>
+                <option value="その他">その他</option>
+              </select>
+            </dd>
+        </div>
+        <div class="form__item">
+          <dt><label for="kind">お名前</label><span class="require">必須</span></dt>
+          <dd><input id="name" type="text" name="name" placeholder="インテリア 太郎"></dd>
+        </div>
+        <div class="form__item">
+          <dt><label for="mail">メールアドレス</label><span class="require">必須</span></dt>
+          <dd><input id="mail" type="email" name="mail" placeholder="xxxxxxx@xxx.xxxx"></dd>
+        </div>
+        <div class="form__item">
+          <dt>どこでお知りになりましたか？</dt>
+          <dd class="checkbox__group">
+            <div class="checkbox__item">
+              <input type="checkbox" name="know[]" id="know__1" value="SNS">
+              <label for="know__1">SNS</label>
+            </div>
+            <div class="checkbox__item">
+              <input type="checkbox" name="know[]" id="know__2" value="Google検索">
+              <label for="know__2">Google検索</label>
+            </div>
+            <div class="checkbox__item">
+              <input type="checkbox" name="know[]" id="know__3" value="紹介・口コミ">
+              <label for="know__3">紹介・口コミ</label>
+            </div>
+            <div class="checkbox__item">
+              <input type="checkbox" name="know[]" id="know__4" value="その他">
+              <label for="know__4">その他</label>
+            </div>
+          </dd>
+        </div>
+        <div class="form__item">
+          <dt><label for="message">お問い合わせ内容</label><span class="require">必須</span></dt>
+          <dd><textarea name="message" id="message" cols="40" rows="8"></textarea></dd>
+        </div>
+      </dl>
+
+      <div class="privacy__policy">
+        <div class="privacy__txt">
+          <p class="privacy__ttl">個人情報の取り扱いについて</p>
+          <p class="privacy__detail">当社は、お客様等の個人情報について、個人情報保護に関する法令およびその他の規範を遵守します。</p>
+          <ol class="privacy__item">
+            <li class="privacy__list">1. 個人情報の取り扱いに関するテキストが入ります個人情報の取り扱いに関するテキス</li>
+            <li class="privacy__list">2. 個人情報の取り扱いに関するテキストが入ります個人情報の取り扱いに関するテキス</li>
+            <li class="privacy__list">3. 個人情報の取り扱いに関するテキストが入ります個人情報の取り扱いに関するテキス</li>
+            <li class="privacy__list">4. 個人情報の取り扱いに関するテキストが入ります個人情報の取り扱いに関するテキス</li>
+            <li class="privacy__list">5. 個人情報の取り扱いに関するテキストが入ります個人情報の取り扱いに関するテキス</li>
+          </ol>
+        </div>
+        <div class="privacy__check">
+          <input type="checkbox" name="privacy" id="privacy" value="">
+          <label for="privacy">個人情報の取り扱いに同意する</label>
+        </div>
+      </div>
+
+      <input class="btn__submit" type="submit" name="send" value="送信">
+
+      
+     </form>
+    </div>
+
+  </main>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer__infoArea">
+      <a href="../index.html" class="footer__logo"><img src="../images/common/logo-w.svg" alt="Interior Design"
+          class="footer__img"></a>
+      <div class="footer__info">
+        <p class="footer__address">
+          〒999-9999<br>東京都○○○○○○○○○○○○○○<br>TEL: 03-9999-9999</p>
+        <p class="footer__copy">Copyright &copy; Interior Design. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="footer__fnav">
+      <div class="fnav__col">
+        <p class="fnav__ttl"><a href="../index.html" class="fnav__link">会社情報</a>
+        <ul class="fnav__inner">
+          <li class="fnav__innerList"><a href="../company/index.html#philosophy" class="fnav__innerLink">企業理念</a></li>
+          <li class="fnav__innerList"><a href="../company/index.html#service" class="fnav__innerLink">事業紹介</a></li>
+          <li class="fnav__innerList"><a href="../company/index.html#overview" class="fnav__innerLink">会社概要</a></li>
+          <li class="fnav__innerList"><a href="../company/index.html#access" class="fnav__innerLink">アクセス</a></li>
+        </ul>
+        </p>
+      </div>
+      <div class="fnav__col">
+        <p class="fnav__ttl"><a href="../products/index.html" class="fnav__link">商品一覧</a></p>
+        <p class="fnav__ttl"><a href="../works/index.html" class="fnav__link">実績紹介</a></p>
+      </div>
+      <div class="fnav__col">
+        <p class="fnav__ttl"><a href="../faq/index.html" class="fnav__link">よくある質問</a></p>
+        <p class="fnav__ttl"><a href="index.html" class="fnav__link">お問い合わせ</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../js/function.js"></script>
+</body>
+
+</html>

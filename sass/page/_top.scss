@@ -1,0 +1,505 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+
+  .main {
+    padding-top: 80px;
+
+    @media screen and (max-width: 1024px) {
+      padding-top: 60px;
+    }
+  }
+
+  // mv
+  .mv {
+    height: 600px;
+    margin-bottom: 120px;
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 40px;
+      height: 400px;
+    }
+
+    &__list {
+      position: absolute;
+      width: 70%;
+      right: 0;
+      opacity: 0;
+      animation: fade 15s infinite;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
+      &:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 5s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 10s;
+      }
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      45% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+
+      @media screen and (max-width: 767px) {
+        height: 400px;
+      }
+    }
+
+    &__catch {
+      position: absolute;
+      top: 210px;
+      left: 6%;
+      text-shadow: 1px 1px 3px $white;
+      font-size: 50px;
+      font-family: $zenold;
+
+      @media screen and (max-width: 767px) {
+        top: 300px;
+        text-shadow: 1px 1px 1px #777;
+        font-size: 28px;
+        color: $white;
+      }
+    }
+  }
+
+  // company
+
+  .company {
+    margin-bottom: 120px;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 60px;
+    }
+
+    &__ttl {
+      @include secTtl;
+      position: relative;
+      z-index: 10;
+      transform: translate(4vw, 5vw);
+
+      @media screen and (max-width: 767px) {
+        transform: translate(0, 7vw);
+        text-align: center;
+      }
+    }
+
+    &__inner {
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 767px) {
+        flex-direction: column;
+      }
+    }
+
+    &__left {
+      // flex-grow: 1;
+      width: 65%;
+      height: 500px;
+      background: url(../images/top/company.jpg)center center / cover;
+
+      @media screen and (max-width: 767px) {
+        height: 300px;
+        width: 100%;
+      }
+    }
+
+    &__right {
+      width: 35%;
+      flex-shrink: 0;
+      padding: 5% 0 5% 5%;
+      transform: translateX(-8%);
+      background: $white;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        padding: 20px 20px 0;
+        transform: none;
+      }
+    }
+
+    &__head {
+      margin-bottom: 40px;
+      font-size: 24px;
+      font-family: $zenold;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+    }
+
+    &__txt {
+      margin-bottom: 40px;
+      line-height: 1.8;
+      font-size: 15px;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 20px;
+      }
+    }
+
+
+
+    &__btn {
+      @include btn;
+    }
+
+
+
+
+  }
+
+  // products
+
+  .products {
+    margin-bottom: 120px;
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 60px;
+    }
+
+    &::after {
+      content: "";
+      width: 70%;
+      height: 300px;
+      display: block;
+      background-color: $bgcolor;
+      position: absolute;
+      top: 6vw;
+      right: 0;
+      z-index: -10;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        height: 250px;
+        top: 10vw;
+      }
+    }
+
+    &__head {
+      width: 70%;
+      padding: 0 5%;
+      margin-left: auto;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    &__ttl {
+      @include secTtl;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: 767px) {
+        text-align: center;
+      }
+    }
+
+    &__txt {
+      margin-bottom: 60px;
+      line-height: 1.8;
+      font-size: 15px;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__slide {
+      margin-bottom: 40px;
+      display: flex;
+      overflow-x: hidden;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__item {
+      display: flex;
+      animation: slide-left 60s infinite linear both;
+
+      @keyframes slide-left {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    }
+
+    &__list {
+      width: calc(100vw / 3);
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__link {
+      @include btn;
+      margin: 0 auto;
+    }
+  }
+
+
+
+  // works 
+
+  .works {
+    margin-bottom: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 60px;
+      flex-direction: column;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      min-height: 420px;
+      background-color: $bgcolor;
+      top: 6vw;
+      left: 0;
+      z-index: -10;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        height: 90%;
+        min-height: auto;
+        top: 10vw;
+      }
+    }
+
+    &__left {
+      padding: 0 6% 0 4%;
+
+      @media screen and (max-width: 767px) {
+        padding: 0 20px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__ttl {
+      @include secTtl;
+      margin-bottom: 40px;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
+
+    &__txt {
+      line-height: 1.8;
+      font-size: 15px;
+
+      &:nth-child(2) {
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__link {
+      @include btn;
+    }
+
+    &__item {
+      max-width: 1000px;
+      margin-top: 170px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 0;
+      }
+    }
+
+    &__list {
+      max-width: 500px;
+    }
+  }
+
+  // info
+
+  .info {
+    padding: 0 5% 80px;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 767px) {
+      padding: 0 20px 60px;
+      flex-direction: column;
+    }
+
+    &__faq {
+      &Link {
+        position: relative;
+        width: 48%;
+        background: url(../images/top/faq.jpg)center center / cover;
+        height: 403px;
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+          height: 233px;
+        }
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1));
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:first-child {
+          @media screen and (max-width: 767px) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      &Txt {
+        color: $white;
+        position: absolute;
+        left: 25px;
+        bottom: 20px;
+
+        & span {
+          display: block;
+        }
+      }
+
+      &En {
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        font-weight: bold;
+        font-size: 4vw;
+
+        @media screen and (max-width: 767px) {
+          font-size: 8vw;
+        }
+      }
+
+      &Ja {
+        font-size: 14px;
+      }
+
+      &Btn {
+        position: absolute;
+        right: 25px;
+        bottom: 20px;
+        width: clamp(85px, 10vw, 140px);
+      }
+
+      &Img {
+        width: 100%;
+      }
+
+    }
+
+    &__contact {
+      &Link {
+        position: relative;
+        width: 48%;
+        background: url(../images/top/contact.jpg)center center / cover;
+        height: 403px;
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+          height: 233px;
+        }
+
+        &::before {
+          @extend .info__faqLink;
+        }
+      }
+
+      &Txt {
+        @extend .info__faqTxt;
+      }
+
+      &En {
+        @extend .info__faqEn;
+      }
+
+      &Ja {
+        @extend .info__faqJa;
+      }
+
+      &Btn {
+        @extend .info__faqBtn;
+      }
+
+      &Img {
+        @extend .info__faqImg;
+      }
+
+    }
+
+  }
+
+  // fadein
+
+  // .fadein {
+  //   opacity: 0;
+  //   transform: translateY(80px);
+  //   transition: all 1s;
+
+  //   & .inview {
+  //     opacity: 1;
+  //     transform: translateY(0);
+  //   }
+  // }
+}
